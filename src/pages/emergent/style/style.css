@@ -1,0 +1,180 @@
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes:wght@400&display=swap");
+@import "tailwindcss";
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+  line-height: 1.6;
+  color: #003865; /* midnight-blue */
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* CSS Variables for Brand Colors */
+:root {
+  /* Dolci Brand Colors */
+  --dolci-blue: #b2d7ec;
+  --white-sand: #fff9e9;
+  --arctic-blue: #d7f7fb;
+  --marine-blue: #b6e2d3;
+  --midnight-blue: #003865;
+  --blushing-sun: #ffd9c1;
+  --sand-brown: #e6dbbf;
+  --dark-accent: #98d0da;
+  --light-accent: #9ff1ff;
+}
+
+@layer components {
+  main {
+    @apply w-full overflow-x-hidden;
+    /* @apply w-full; */
+  }
+
+  /* Dolci System design*/
+  .dolci_system_design {
+    @apply bg-thinblue w-full min-h-dvh relative;
+
+    .cap {
+      @apply text-[20px] md:text-[24px] font-playfair-display font-normal leading-8 md:leading-10 text-textbrown;
+    }
+
+    .menu {
+      @apply text-[20px] md:text-[20px] font-cabinate-grotesk-400;
+    }
+
+    .contain {
+      @apply w-full max-w-[1230px] mx-auto px-4 sm:px-6 lg:px-8;
+    }
+    .lg-contain {
+      @apply w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .herobg {
+      @apply bg-[url('../../../assets/backgrounds/herobg.svg')] bg-no-repeat bg-cover bg-center;
+    }
+  }
+}
+
+/* Typography Classes */
+.font-playfair {
+  font-family: "Playfair Display", serif;
+}
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-great-vibes {
+  font-family: "Great Vibes", cursive;
+}
+
+/* Brand Color Utilities */
+.text-dolci-blue {
+  color: var(--dolci-blue);
+}
+
+.text-midnight-blue {
+  color: var(--midnight-blue);
+}
+
+.text-dark-accent {
+  color: var(--dark-accent);
+}
+
+.bg-dolci-blue {
+  background-color: var(--dolci-blue);
+}
+
+.bg-white-sand {
+  background-color: var(--white-sand);
+}
+
+.bg-arctic-blue {
+  background-color: var(--arctic-blue);
+}
+
+.bg-midnight-blue {
+  background-color: var(--midnight-blue);
+}
+
+.bg-dark-accent {
+  background-color: var(--dark-accent);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  min-height: 48px;
+}
+
+.btn-primary {
+  background-color: var(--dolci-blue);
+  color: var(--midnight-blue);
+}
+
+.btn-primary:hover {
+  background-color: var(--dark-accent);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--dolci-blue);
+  border: 2px solid var(--dolci-blue);
+}
+
+.btn-secondary:hover {
+  background-color: var(--dolci-blue);
+  color: var(--midnight-blue);
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-5px);
+}
+
+.card-padding {
+  padding: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .card-padding {
+    padding: 2rem;
+  }
+}

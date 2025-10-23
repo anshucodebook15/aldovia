@@ -1,0 +1,172 @@
+/* Inlcude all the Fonts */
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://db.onlinewebfonts.com/c/9e65328448e32690935f5e0dec7e40be?family=PP+Hatton+Medium");
+@import url("https://db.onlinewebfonts.com/c/b75ac497f8189c60b43d8f9d052d8a8c?family=Cabinet+Grotesk+Medium");
+@import url("https://db.onlinewebfonts.com/c/63e7e31dbe7aa38c7c04b413ef841103?family=Cabinet+Grotesk+Variable");
+@import url("https://db.onlinewebfonts.com/c/46ba2f9f15aa5c3da7df3e38fe5487f7?family=Cabinet+Grotesk+Light");
+
+@import "tailwindcss";
+
+/* @font-face {
+  font-family: "PP Hatton Medium";
+  src: url("https://db.onlinewebfonts.com/t/9e65328448e32690935f5e0dec7e40be.eot");
+  src: url("https://db.onlinewebfonts.com/t/9e65328448e32690935f5e0dec7e40be.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/9e65328448e32690935f5e0dec7e40be.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/9e65328448e32690935f5e0dec7e40be.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/9e65328448e32690935f5e0dec7e40be.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/9e65328448e32690935f5e0dec7e40be.svg#PP Hatton Medium")
+      format("svg");
+} */
+
+@theme {
+  --color-yellow: #e7d393;
+  --color-white-100: #efefef;
+  --font-sans: "Mona Sans", sans-serif;
+  --font-modern-negra: "Modern Negra", sans-serif;
+  --font-serif: "DM Serif Text", serif;
+
+  /* Dolci Fonts Hatton -> Heading, grotesk -> body, playfair-display - captions */
+  --font-hatton: "PP Hatton Medium";
+  --font-cabinate-grotesk-300: "Cabinet Grotesk Light";
+  --font-cabinate-grotesk-400: "Cabinet Grotesk Regular";
+  --font-cabinate-grotesk-500: "Cabinet Grotesk Medium";
+  --font-cabinate-grotesk-700: "Cabinet Grotesk Bold";
+  --font-playfair-display: "Playfair Display", serif;
+
+  /* Dolci Colors */
+  /* --color-primary: #98d8e6; */
+  --color-primary: #97cfe5;
+  --color-secondary: #b27b92;
+  /* --color-thinblue: #eff1fb; */
+  --color-thinblue: #f9faff;
+  --color-textblack: #1b1b1b;
+  --color-textbrown: #503d3f;
+}
+
+:root {
+  font-family: var(--font-cabinate-grotesk-400);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(22, 22, 22, 0.87);
+  background-color: #f6f6f6;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  font-family: var(--font-cabinate-grotesk-400);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+@utility flex-center {
+  @apply flex justify-center items-center;
+}
+
+@utility col-center {
+  @apply flex flex-col justify-center items-center;
+}
+
+@utility abs-center {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility text-gradient {
+  background: linear-gradient(to bottom, #ffffff, #898989);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility radial-gradient {
+  background: radial-gradient(
+    circle at center,
+    #434343 0%,
+    #000 50%,
+    transparent 100%
+  );
+}
+
+@utility masked-img {
+  mask-image: url("/images/mask-img.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 50%;
+}
+
+@layer components {
+  main {
+    @apply w-full overflow-x-hidden;
+    /* @apply w-full; */
+  }
+
+  /* Dolci System design*/
+  .dolci_system_design {
+    @apply bg-thinblue w-full min-h-dvh relative;
+
+    h1 {
+      @apply text-[54px] md:text-[86px] font-hatton leading-18 md:leading-28;
+    }
+
+    h2 {
+      @apply text-[36px] md:text-[56px] font-hatton leading-14 md:leading-20;
+    }
+
+    h3 {
+      @apply text-[20px] md:text-[24px] font-hatton leading-7 md:leading-10;
+    }
+
+    p {
+      @apply text-[18px] md:text-[20px] font-cabinate-grotesk-400 text-textbrown md:leading-7 leading-[22px];
+    }
+
+    .cap {
+      @apply text-[20px] md:text-[24px] font-playfair-display font-normal leading-8 md:leading-10 text-textbrown;
+    }
+
+    .menu {
+      @apply text-[20px] md:text-[20px] font-cabinate-grotesk-400;
+    }
+
+    .contain {
+      @apply w-full max-w-[1230px] mx-auto px-4 sm:px-6 lg:px-8;
+    }
+    .lg-contain {
+      @apply w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .herobg {
+      @apply bg-[url('../../../assets/backgrounds/herobg.svg')] bg-no-repeat bg-cover bg-center;
+    }
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.clipname {
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}

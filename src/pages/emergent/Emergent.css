@@ -1,0 +1,268 @@
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes:wght@400&display=swap");
+@import "tailwindcss";
+/* CSS Reset */
+
+@theme {
+  --color-yellow: #e7d393;
+  --color-white-100: #efefef;
+  --font-sans: "Mona Sans", sans-serif;
+  --font-modern-negra: "Modern Negra", sans-serif;
+  --font-serif: "DM Serif Text", serif;
+
+  /* Dolci Fonts Hatton -> Heading, grotesk -> body, playfair-display - captions */
+  --font-hatton: "PP Hatton Medium";
+  --font-cabinate-grotesk-300: "Cabinet Grotesk Light";
+  --font-cabinate-grotesk-400: "Cabinet Grotesk Regular";
+  --font-cabinate-grotesk-500: "Cabinet Grotesk Medium";
+  --font-cabinate-grotesk-700: "Cabinet Grotesk Bold";
+  --font-playfair-display: "Playfair Display", serif;
+  --font-playfair: "Playfair Display", serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-great-vibes: "Great Vibes", cursive;
+
+  /* Dolci Colors */
+  /* --color-primary: #98d8e6; */
+  --color-primary: #97cfe5;
+  --color-secondary: #b27b92;
+  /* --color-thinblue: #eff1fb; */
+  --color-thinblue: #f9faff;
+  --color-textblack: #1b1b1b;
+  --color-textbrown: #503d3f;
+
+  /* Dolci Colors Emergent */
+  --color-dolci-blue: #b2d7ec;
+  --color-white-sand: #fff9e9;
+  --color-arctic-blue: #d7f7fb;
+  --color-marine-blue: #b6e2d3;
+  --color-midnight-blue: #003865;
+  --color-blushing-sun: #ffd9c1;
+  --color-sand-brown: #e6dbbf;
+  --color-dark-accent: #98d0da;
+  --color-light-accent: #9ff1ff;
+}
+
+:root {
+  font-family: var(--font-montserrat);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(22, 22, 22, 0.87);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Dolci Brand Colors */
+  --dolci-blue: #b2d7ec;
+  --white-sand: #fff9e9;
+  --arctic-blue: #d7f7fb;
+  --marine-blue: #b6e2d3;
+  --midnight-blue: #003865;
+  --blushing-sun: #ffd9c1;
+  --sand-brown: #e6dbbf;
+  /* --dark-accent: #98d0da; */
+  --dark-accent: #6f8589;
+  --light-accent: #9ff1ff;
+}
+
+/* html {
+  scroll-behavior: smooth;
+} */
+
+html,
+body {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+  line-height: 1.6;
+  color: #003865; /* midnight-blue */
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+@layer components {
+  main {
+    @apply w-full overflow-x-hidden;
+  }
+
+  /* Dolci System design*/
+  .dolci_system_design {
+    /* @apply bg-thinblue w-full min-h-dvh relative;
+
+    .cap {
+      @apply text-[20px] md:text-[24px] font-playfair-display font-normal leading-8 md:leading-10 text-textbrown;
+    }
+
+    .menu {
+      @apply text-[20px] md:text-[20px] font-cabinate-grotesk-400;
+    } */
+
+    .contain {
+      @apply w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
+    }
+    .lg-contain {
+      @apply w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .herobg {
+      /* @apply bg-[url('../../../assets/backgrounds/herobg.svg')] bg-no-repeat bg-cover bg-center; */
+      @apply bg-[url('../../assets/backgrounds/herobg.svg')] bg-no-repeat bg-cover bg-center;
+    }
+    .dbg {
+      /* @apply bg-[url('../../../assets/backgrounds/herobg.svg')] bg-no-repeat bg-cover bg-center; */
+      @apply bg-[url('../../assets/backgrounds/dbg.svg')] bg-no-repeat bg-cover bg-center;
+    }
+
+    /* .b2blist {
+      list-style-image: url("../../assets/icons/badge-check.svg");
+     
+    }
+
+    li::marker {
+    
+      text-align: middle !important;
+    } */
+
+    /* test */
+
+    .b2blist {
+      list-style: none; /* remove default bullet */
+      padding: 0;
+      margin: 0;
+    }
+
+    .b2blist li {
+      position: relative;
+      padding-left: 28px; /* space for icon */
+    }
+
+    .b2blist li::before {
+      content: url("../../assets/icons/badge-check.svg"); /* your custom bullet */
+      position: absolute;
+      left: 0;
+      top: 0.25em; /* adjust vertical alignment */
+      width: 18px; /* set icon size */
+      height: 18px;
+    }
+
+    /* /**end test / */
+  }
+}
+
+.dash {
+  background-image: url("../../assets/backgrounds/herobg.svg");
+}
+
+/* Typography Classes */
+/* .font-playfair {
+  font-family: "Playfair Display", serif;
+} */
+
+/* .font-montserrat {
+  font-family: "Montserrat", sans-serif;
+} */
+
+/* .font-great-vibes {
+  font-family: "Great Vibes", cursive;
+} */
+
+/* Brand Color Utilities */
+.text-dolci-blue {
+  color: var(--dolci-blue);
+}
+
+.text-midnight-blue {
+  color: var(--midnight-blue);
+}
+
+.text-dark-accent {
+  color: var(--dark-accent);
+}
+
+.bg-dolci-blue {
+  background-color: var(--dolci-blue);
+}
+
+.bg-white-sand {
+  background-color: var(--white-sand);
+}
+
+.bg-arctic-blue {
+  background-color: var(--arctic-blue);
+}
+
+.bg-midnight-blue {
+  background-color: var(--midnight-blue);
+}
+
+.bg-dark-accent {
+  background-color: var(--dark-accent);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  min-height: 48px;
+}
+
+.btn-primary {
+  background-color: var(--dolci-blue);
+  color: var(--midnight-blue);
+}
+
+.btn-primary:hover {
+  background-color: var(--dark-accent);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--dolci-blue);
+  border: 2px solid var(--dolci-blue);
+}
+
+.btn-secondary:hover {
+  background-color: var(--dolci-blue);
+  color: var(--midnight-blue);
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-5px);
+}
+
+.card-padding {
+  padding: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .card-padding {
+    padding: 2rem;
+  }
+}

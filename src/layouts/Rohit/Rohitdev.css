@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nata+Sans:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-satoshi: satoshi, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-raleway: Raleway, sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-natosans: "Nata Sans", sans-serif;
+}
+
+@layer components {
+  .typography {
+    p {
+      font-size: var(--text-base);
+      color: var(--color-gray-700);
+    }
+    h1 {
+      font-size: var(--text-3xl);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-gray-950);
+    }
+    h2 {
+      font-size: var(--text-3xl);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-gray-950);
+    }
+  }
+}
+
+:root {
+  font-family: var(--font-satoshi);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(22, 22, 22, 0.87);
+  background-color: #f6f6f6;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}

@@ -13,6 +13,7 @@ import Directors from "../pages/emergent/pages/Directors";
 import ScrollToHash from "../pages/emergent/lib/ScrollToHash";
 import Aldovia from "../pages/aldovia/aldovia";
 import AldoviaEx from "../pages/aldovia/aldoviaEx";
+import Alframes from "../pages/aldovia/alframes";
 
 // const TestRouter = () => {
 //   return (
@@ -35,6 +36,7 @@ const MainRouter = () => {
       <Routes>
         <Route path="/" element={<Aldovia />} />
         <Route path="/ex" element={<AldoviaEx />} />
+        <Route path="/frames" element={<Alframes />} />
         <Route path="/wsw" element={<Emergent />} />
         <Route path="/b2b" element={<B2b />} />
         <Route path="/directors" element={<Directors />} />

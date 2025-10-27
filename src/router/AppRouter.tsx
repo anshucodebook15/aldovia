@@ -11,7 +11,7 @@ import Emergent from "../pages/emergent/Emergent";
 import B2b from "../pages/emergent/pages/B2b";
 import Directors from "../pages/emergent/pages/Directors";
 import ScrollToHash from "../pages/emergent/lib/ScrollToHash";
-import Aldovia from "../pages/aldovia/aldovia";
+// import Aldovia from "../pages/aldovia/aldovia";
 import AldoviaEx from "../pages/aldovia/aldoviaEx";
 import Alframes from "../pages/aldovia/alframes";
 
@@ -34,7 +34,7 @@ const MainRouter = () => {
     <Router>
       <ScrollToHash />
       <Routes>
-        <Route path="/" element={<Aldovia />} />
+        <Route path="/" element={<Alframes />} />
         <Route path="/ex" element={<AldoviaEx />} />
         <Route path="/frames" element={<Alframes />} />
         <Route path="/wsw" element={<Emergent />} />
@@ -46,7 +46,6 @@ const MainRouter = () => {
     </Router>
   );
 };
-
 
 // const HashAppRouter = () => {
 //   return (

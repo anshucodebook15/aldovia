@@ -1,9 +1,64 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { Menu } from "lucide-react";
+// import { useAssets } from "../../hooks/useAssets";
 // import { useAssets } from "../../hooks/useAssets";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const Navbar = () => {
+  // const { icons } = useAssets();
+  const navItems = [
+    { title: "Home.", uri: "/about" },
+    { title: "About.", uri: "/work" },
+    { title: "Property.", uri: "/projects" },
+    // { title: "Skills.", uri: "/skills" },
+    // { title: "Contact.", uri: "/contact" },
+  ];
+
+  return (
+    <div className="py-2 fixed w-full md:py-2 top-0 z-50 bg-transparent">
+      <div className="w-full max-w-[1230px] mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className="flex justify-between items-center rounded-xl px-4 py-3">
+          <div className="text-shadow-initial">
+            <h2 className="font-bold font-natosans text-xl md:text-[16px]">
+              <span className="font-raleway text-gray-200 font-normal">
+                Aldovia
+              </span>
+            </h2>
+          </div>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:block">
+            <ul className="font-natosans font-lightsemibold flex list-none gap-12">
+              {navItems.map((item) => (
+                <li
+                  key={item.uri}
+                  className="text-[16px] link relative text-gray-300"
+                >
+                  <a href={item.uri} className="hover:text-pink-800 link">
+                    {item.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Icons */}
+          <div className="flex gap-2 md:hidden">
+            {/* <div className="cursor-pointer hidden md:block">
+              <img src={icons.github} alt="GitHub" className="w-6" />
+            </div> */}
+            <div className="cursor-pointer block md:hidden">
+              <Menu strokeWidth={1.75} />
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  );
+};
 
 export default function Alframes() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -90,6 +145,7 @@ export default function Alframes() {
       ref={sectionRef}
       className="relative w-full h-[500vh] bg-black overflow-hidden"
     >
+      <Navbar />
       <canvas
         ref={canvasRef}
         className="sticky top-0 w-full h-screen object-cover"

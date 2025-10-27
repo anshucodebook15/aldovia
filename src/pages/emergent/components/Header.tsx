@@ -50,9 +50,8 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition duration-300 ${
-        isScrolled ? "bg-white shadow-lg" : "bg-transparent"
-      } `}
+      className={`fixed top-0 left-0 right-0 z-50 transition duration-300 ${isScrolled ? "bg-white shadow-lg" : "bg-transparent"
+        } `}
     >
       <div className="contain mx-auto">
         <div className="flex items-center justify-between ">
@@ -75,11 +74,10 @@ const Header = () => {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className={`font-montserrat font-medium transition-colors duration-300 ${
-                    isScrolled
+                  className={`font-montserrat font-medium transition-colors duration-300 ${isScrolled
                       ? "text-gray-700 hover:text-midnight-blue"
                       : "text-white hover:text-dolci-blue"
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </button>
@@ -87,13 +85,12 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`font-montserrat font-medium transition-colors duration-300 ${
-                    isActiveLink(item.href)
+                  className={`font-montserrat font-medium transition-colors duration-300 ${isActiveLink(item.href)
                       ? "text-dolci-blue"
                       : isScrolled
-                      ? "text-gray-700 hover:text-midnight-blue"
-                      : "text-white hover:text-dolci-blue"
-                  }`}
+                        ? "text-gray-700 hover:text-midnight-blue"
+                        : "text-white hover:text-dolci-blue"
+                    }`}
                 >
                   {item.name}
                 </Link>
@@ -113,11 +110,11 @@ const Header = () => {
             <a href="tel:+918023456789" className="">
               <button
                 className="bg-dolci-blue font-montserrat font-medium text-lg px-6 py-1 rounded-full cursor-pointer"
-                // onClick={() =>
-                //   document
-                //     .getElementById("location")
-                //     ?.scrollIntoView({ behavior: "smooth" })
-                // }
+              // onClick={() =>
+              //   document
+              //     .getElementById("location")
+              //     ?.scrollIntoView({ behavior: "smooth" })
+              // }
               >
                 <Phone className="inline-block mr-2 h-4 w-4" />
                 Call
@@ -126,11 +123,11 @@ const Header = () => {
             <Link to={"/#location"}>
               <button
                 className="border-1 font-montserrat font-medium text-lg px-6 py-1 rounded-full cursor-pointer text-gray-800 bg-white border-gray-300 hover:bg-white hover:text-midnight-blue"
-                // onClick={() =>
-                //   document
-                //     .getElementById("menu")
-                //     ?.scrollIntoView({ behavior: "smooth" })
-                // }
+              // onClick={() =>
+              //   document
+              //     .getElementById("menu")
+              //     ?.scrollIntoView({ behavior: "smooth" })
+              // }
               >
                 <Store className="inline-block mr-2 h-4 w-4" />
                 Visit
@@ -140,9 +137,8 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden p-2 ${
-              isScrolled ? "text-gray-700" : "text-white"
-            } `}
+            className={`lg:hidden p-2 ${isScrolled ? "text-gray-700" : "text-white"
+              } `}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -172,11 +168,10 @@ const Header = () => {
                   key={item.name}
                   to={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block py-2 px-4 font-montserrat rounded transition-colors ${
-                    isActiveLink(item.href)
+                  className={`block py-2 px-4 font-montserrat rounded transition-colors ${isActiveLink(item.href)
                       ? "text-midnight-blue bg-dolci-blue"
                       : "text-gray-700 hover:text-midnight-blue hover:bg-arctic-blue"
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>
